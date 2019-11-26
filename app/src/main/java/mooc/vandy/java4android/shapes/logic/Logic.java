@@ -1,6 +1,8 @@
 package mooc.vandy.java4android.shapes.logic;
 
 import mooc.vandy.java4android.shapes.ui.OutputInterface;
+//Added the math library because why reinvent the wheel?
+import java.lang.Math;
 
 /**
  * This is where the logic of this App is centralized for this assignment.
@@ -160,7 +162,72 @@ public class Logic
         }
     }
 
-    // TODO -- add your code here
+    public static double rectangleArea(double length, double width) {
+        double rectangleAreaSol = length * width;
+        return rectangleAreaSol;
+        // Do I really need documentation here?
+    }
+
+    public static double rectanglePerimeter(double length, double width) {
+        double rectanglePerimeterSol = (length * 2.0) + (width * 2.0);
+        return rectanglePerimeterSol;
+        // Or here?
+    }
+
+    public static double circleArea(double radius) {
+        double circleAreaSol = Math.PI * (radius * radius);
+        return circleAreaSol;
+        // Used the Math library PI constant otherwise the tests wouldn't pass.
+        // pi * r^2
+    }
+
+    public static double circleCircumference(double radius) {
+        double circleCircumferenceSol = Math.PI * radius * 2.0;
+        return circleCircumferenceSol;
+        // pi * r * 2
+    }
+
+    public static double rightTriangleArea(double base, double height) {
+        double rightTriangleAreaSol = (base * height)/2.0;
+        return rightTriangleAreaSol;
+        // Fun fact; right triangles are half the area of a square.
+    }
+
+    public static double rightTrianglePerimeter(double base, double height) {
+        double rightTrianglePerimeterSol = (Math.hypot(base, height)) + base + height;
+        return rightTrianglePerimeterSol;
+        // I wish I was high on potenuse
+        // Used the hypotenuse method to reduce the amount of code
+    }
+
+    public static double boxVolume(double length, double width, double depth) {
+        double boxVolumeSol = length * width * depth;
+        return boxVolumeSol;
+        // Yup
+    }
+
+    public static double boxSurfaceArea(double length, double width, double depth) {
+        double surface1 = ((length * width) * 2);
+        double surface2 = ((length * depth) * 2);
+        double surface3 = ((depth * width) * 2);
+        double boxSurfaceAreaSol = surface1 + surface2 + surface3;
+        return boxSurfaceAreaSol;
+        // Figure out the surface area of one side, multiply it by 2,
+        // then do the same for the other sides
+    }
+
+    public static double sphereVolume(double radius) {
+        double sphereVolumeSol = (Math.pow(radius, 3.0)) * (4.0/3.0) * Math.PI;
+        return sphereVolumeSol;
+        // Used the power method instead of multiplying radius three times to itself
+        // Fuckin PI
+    }
+
+    public static double sphereSurfaceArea(double radius) {
+        double sphereSurfaceAreaSol = (radius * radius) * Math.PI * 4.0;
+        return sphereSurfaceAreaSol;
+        // radius squared * fuckin PI * 4
+    }
 
 
 }
